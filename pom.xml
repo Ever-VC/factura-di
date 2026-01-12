@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.evervc.springboot.di.factura</groupId>
-    <artifactId>spingboot-difactura</artifactId>
+    <artifactId>springboot-difactura</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spingboot-difactura</name>
     <description>spingboot-difactura</description>
