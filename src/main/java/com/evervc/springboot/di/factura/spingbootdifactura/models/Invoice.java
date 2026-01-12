@@ -22,4 +22,8 @@ public class Invoice {
     private String description;
 
     private final List<Item> items; // Cada item tiene la relación a los productos
+
+    public double getTotal() {
+        return items.stream().reduce(0.0, (subtotal, item) -> subtotal + item.getAmount(), Double::sum);
+    }
 }

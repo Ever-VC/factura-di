@@ -1,5 +1,10 @@
 package com.evervc.springboot.di.factura.spingbootdifactura.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class Item {
 
     private Product product;
@@ -14,19 +19,8 @@ public class Item {
     public Item() {
     }
 
-    public Product getProduct() {
-        return product;
+    public double getAmount() {
+        return quantity * product.getPrice();
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
 }
