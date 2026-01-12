@@ -20,6 +20,7 @@ import java.util.List;
 @Getter
 @Component
 @RequestScope
+@JsonIgnoreProperties({"advisors"})
 @RequiredArgsConstructor
 public class Invoice {
     // Detalle de la factura
