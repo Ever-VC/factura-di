@@ -1,6 +1,7 @@
 package com.evervc.springboot.di.factura.spingbootdifactura.models;
 
 import com.evervc.springboot.di.factura.spingbootdifactura.controllers.InvoiceController;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import lombok.Getter;
@@ -11,12 +12,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
 import java.util.List;
 
 @Setter
 @Getter
 @Component
+@RequestScope
 @RequiredArgsConstructor
 public class Invoice {
     // Detalle de la factura
