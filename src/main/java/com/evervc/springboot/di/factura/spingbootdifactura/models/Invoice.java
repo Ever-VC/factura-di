@@ -9,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
@@ -20,8 +19,10 @@ import java.util.List;
 @Setter
 @Getter
 @Component
-@SessionScope
-@JsonIgnoreProperties({"advisors"})
+@RequestScope
+// Si lo dejamos como sesion, "Pepe" no se irá concatenando ya que ambos se crearán y eliminarán a la vez
+//@SessionScope
+@JsonIgnoreProperties({"advisors", "targetSource"})
 @RequiredArgsConstructor
 public class Invoice {
     // Detalle de la factura
