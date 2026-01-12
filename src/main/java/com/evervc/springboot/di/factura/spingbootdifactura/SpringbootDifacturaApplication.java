@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpingbootDifacturaApplication {
+public class SpringbootDifacturaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpingbootDifacturaApplication.class, args);
+        SpringApplication.run(SpringbootDifacturaApplication.class, args);
     }
 
 }
