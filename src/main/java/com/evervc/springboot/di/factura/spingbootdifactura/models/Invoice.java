@@ -22,7 +22,7 @@ import java.util.List;
 @RequestScope
 // Si lo dejamos como sesion, "Pepe" no se irá concatenando ya que ambos se crearán y eliminarán a la vez
 //@SessionScope
-@JsonIgnoreProperties({"advisors", "targetSource"})
+//@JsonIgnoreProperties({"advisors", "targetSource"})
 @RequiredArgsConstructor
 public class Invoice {
     // Detalle de la factura
@@ -34,7 +34,7 @@ public class Invoice {
 
     private final List<Item> items; // Cada item tiene la relación a los productos
 
-    private static final Logger log = LoggerFactory.getLogger(InvoiceController.class);
+    private static final Logger log = LoggerFactory.getLogger(Invoice.class);
 
     @PostConstruct
     public void init() {

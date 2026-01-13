@@ -1,5 +1,6 @@
 package com.evervc.springboot.di.factura.spingbootdifactura.controllers;
 
+import com.evervc.springboot.di.factura.spingbootdifactura.models.Client;
 import com.evervc.springboot.di.factura.spingbootdifactura.models.Invoice;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -17,11 +18,14 @@ public class InvoiceController {
 
     @GetMapping("/show")
     public Invoice show() {
-        log.info("---------------------------");
-        log.info("ANTES DE MOSTRAR");
-        log.info("---------------------------");
-        log.info(invoice.getItems().getFirst().getProduct().getName());
-        log.info("---------------------------");
-        return invoice;
+        // Creando cliente a partir del cliente proxy
+        Client c = new Client();
+        c.setName(invoice.getClient().getName());
+        c.setLastname(invoice.getClient().getLastname());
+
+        // Creando factura a partir de la factura proxy (De ese modo se envian objetos reales y no copias creadas por Spring)
+        Invoice i = new Invoice(c, invoice.getItems());
+        i.setDescription(invoice.getDescription());
+        return i;
     }
 }
